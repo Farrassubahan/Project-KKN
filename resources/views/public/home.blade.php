@@ -211,6 +211,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="mt-10">
+                    <a href="/program" class="group inline-flex items-center gap-3 bg-brand-light text-brand-dark px-8 py-3.5 rounded-full font-bold hover:bg-[#a8d360] transition-all hover:-translate-y-1 shadow-lg">
+                        Lihat Selengkapnya <i class="fas fa-arrow-right text-sm transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
             
             <div class="relative" data-aos="fade-left">
@@ -228,9 +233,11 @@
         <p class="text-brand-gray text-lg mb-10">
             Perubahan dimulai dari niat, dan diwujudkan dengan aksi nyata. Dukung program KKN kami untuk Desa Mulangsari yang lebih baik.
         </p>
-        <a href="#" class="inline-block bg-brand-light text-brand-dark px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:bg-[#a8d360] transition-all transform hover:-translate-y-1">
-            Hubungi Mahasiswa KKN
-        </a>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="/program" class="inline-block bg-brand-light text-brand-dark px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:bg-[#a8d360] transition-all transform hover:-translate-y-1">
+                Lihat Detail Program Kerja
+            </a>
+        </div>
     </div>
 </section>
 @endsection

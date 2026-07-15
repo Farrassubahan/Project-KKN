@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Kebersihan Lingkungan Desa Mulangsari')</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('assets/logo-mulangsari.png') }}" type="image/x-icon">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Tailwind Configuration -->
@@ -64,10 +66,10 @@
 
                 <!-- Desktop Menu (Centered) -->
                 <div class="hidden lg:flex items-center space-x-2 bg-white/50 backdrop-blur-md px-2 py-1.5 rounded-full border border-white/40 shadow-sm">
-                    <a href="#hero" class="nav-link text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 active-nav text-white bg-brand-dark">Beranda</a>
-                    <a href="#tentang" class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Tentang Kami</a>
-                    <a href="#edukasi" class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Edukasi Sampah</a>
-                    <a href="#program" class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Program Kerja</a>
+                    <a href="{{ url('/') }}" data-target="hero" class="nav-link text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('/') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Beranda</a>
+                    <a href="{{ url('/#tentang') }}" data-target="tentang" class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Tentang Kami</a>
+                    <a href="{{ url('/#edukasi') }}" data-target="edukasi" class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Edukasi Sampah</a>
+                    <a href="{{ url('/program') }}" class="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('program') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Program Kerja</a>
                 </div>
 
                 <!-- Right CTA -->
@@ -89,12 +91,12 @@
         <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="lg:hidden hidden bg-[#fbfaf5]/95 backdrop-blur-xl absolute top-24 left-0 w-full shadow-lg border-t border-gray-200">
             <div class="px-6 py-6 flex flex-col space-y-5">
-                <a href="#hero" class="mobile-nav-link text-brand-dark font-bold hover:text-brand-accent transition-colors">Beranda</a>
-                <a href="#tentang" class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Tentang Kami</a>
-                <a href="#edukasi" class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Edukasi Sampah</a>
-                <a href="#program" class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Program Kerja</a>
+                <a href="{{ url('/') }}" class="mobile-nav-link {{ request()->is('/') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Beranda</a>
+                <a href="{{ url('/#tentang') }}" class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Tentang Kami</a>
+                <a href="{{ url('/#edukasi') }}" class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Edukasi Sampah</a>
+                <a href="{{ url('/program') }}" class="mobile-nav-link {{ request()->is('program') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Program Kerja</a>
                 <hr class="border-gray-200">
-                <a href="#edukasi" class="mobile-nav-link bg-brand-light text-brand-dark text-center font-bold px-6 py-3.5 rounded-full hover:bg-[#a8d360] transition-colors shadow-sm">
+                <a href="{{ url('/#edukasi') }}" class="mobile-nav-link bg-brand-light text-brand-dark text-center font-bold px-6 py-3.5 rounded-full hover:bg-[#a8d360] transition-colors shadow-sm">
                     Mulai Pilah
                 </a>
             </div>
@@ -131,7 +133,7 @@
                         <li><a href="/" class="hover:text-white transition">Beranda</a></li>
                         <li><a href="#tentang" class="hover:text-white transition">Tentang Kami</a></li>
                         <li><a href="#edukasi" class="hover:text-white transition">Edukasi Sampah</a></li>
-                        <li><a href="#program" class="hover:text-white transition">Program Kerja</a></li>
+                        <li><a href="/program" class="hover:text-white transition">Program Kerja</a></li>
                     </ul>
                 </div>
                 <div>
@@ -212,6 +214,9 @@
             const navLinks = document.querySelectorAll('.nav-link');
 
             function onScroll() {
+                // Hanya jalankan scrollspy di halaman home
+                if (window.location.pathname !== '/') return;
+
                 let scrollPos = window.scrollY || document.documentElement.scrollTop;
                 let offset = 250;
 
@@ -223,7 +228,7 @@
                             a.classList.add('text-brand-dark');
                             
                             // Set active class
-                            if (a.getAttribute('href') === '#' + section.id) {
+                            if (a.getAttribute('data-target') === section.id) {
                                 a.classList.add('text-white', 'bg-brand-dark');
                                 a.classList.remove('text-brand-dark');
                             }

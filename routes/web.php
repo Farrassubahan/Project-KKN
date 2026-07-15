@@ -17,3 +17,7 @@ Route::get('/edukasi/anorganik', function () {
 Route::get('/edukasi/b3', function () {
     return view('public.edukasi-b3');
 });
+
+Route::get('/program', function () {
+    return view('public.program');
+});
