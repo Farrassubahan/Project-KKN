@@ -28,6 +28,8 @@
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -78,12 +80,12 @@
                 <span class="text-sm font-medium">Dashboard</span>
             </a>
 
-            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-gray-300 hover:bg-white/10 hover:text-white">
+            <a href="{{ url('/admin/categories') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all {{ request()->is('admin/categories*') ? 'bg-brand-accent text-white shadow-md' : 'text-gray-300 hover:bg-white/10 hover:text-white' }}">
                 <i class="fas fa-tags w-5 text-center"></i>
                 <span class="text-sm font-medium">Kategori Blog</span>
             </a>
 
-            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-gray-300 hover:bg-white/10 hover:text-white">
+            <a href="{{ url('/admin/blogs') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all {{ request()->is('admin/blogs*') ? 'bg-brand-accent text-white shadow-md' : 'text-gray-300 hover:bg-white/10 hover:text-white' }}">
                 <i class="fas fa-newspaper w-5 text-center"></i>
                 <span class="text-sm font-medium">Artikel / Berita</span>
             </a>
@@ -195,6 +197,31 @@
                     backdrop.classList.add('hidden');
                 }, 300);
             }
+        }
+
+        // Global SweetAlert2 delete confirmation
+        function confirmDelete(event, form) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Apakah Anda yakin?',
+                text: "Data yang dihapus tidak dapat dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#0f3c2e',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Hapus!',
+                cancelButtonText: 'Batal',
+                borderRadius: '1rem',
+                customClass: {
+                    popup: 'rounded-3xl',
+                    confirmButton: 'rounded-xl font-bold px-5 py-2.5',
+                    cancelButton: 'rounded-xl font-bold px-5 py-2.5'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
         }
     </script>
     
