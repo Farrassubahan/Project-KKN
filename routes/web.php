@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+
 
 Route::get('/', function () {
     return view('public.home');
@@ -26,7 +28,26 @@ Route::get('/blog', function () {
     return view('public.informasi.blog');
 });
 
+
 Route::get('/blog/detail', function () {
     return view('public.informasi.blog-detail');
 });
-    
+
+// Authentication Routes
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Password Reset Routes (Simple One-Page)
+use App\Http\Controllers\ForgotPasswordController;
+
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showForm'])->name('password.request');
+Route::post('/forgot-password/verify', [ForgotPasswordController::class, 'verifyEmail'])->name('password.verify');
+Route::post('/forgot-password/reset', [ForgotPasswordController::class, 'resetPassword'])->name('password.reset_simple');
+
+// Admin Routes (Protected)
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin/dashboard', function () {
+        return view('admin.dashboard');
+    });
+});
