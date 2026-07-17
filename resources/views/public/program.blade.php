@@ -14,7 +14,7 @@
             Program <span class="italic text-brand-accent">Kerja</span> Kami.
         </h1>
         <p class="text-lg md:text-xl text-brand-gray mb-8 leading-relaxed max-w-3xl mx-auto">
-            Melangkah bersama warga, mengabdi untuk lingkungan. Berikut adalah potret aksi nyata yang kami jalankan demi mewujudkan Desa Mulangsari yang asri dan bersih.
+            Melangkah bersama warga, mengabdi untuk lingkungan. 4 Berikut adalah potret aksi nyata yang kami jalankan demi mewujudkan Desa Mulangsari yang asri dan bersih.
         </p>
     </div>
 </section>
