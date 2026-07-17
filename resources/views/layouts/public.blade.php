@@ -75,9 +75,9 @@
                         class="hidden lg:flex items-center space-x-2 bg-white/50 backdrop-blur-md px-2 py-1.5 rounded-full border border-white/40 shadow-sm">
                         <a href="{{ url('/') }}" data-target="hero"
                             class="nav-link text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('/') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Beranda</a>
-                        <a href="{{ url('/#tentang') }}" data-target="tentang"
+                        {{-- <a href="{{ url('/#tentang') }}" data-target="tentang"
                             class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Tentang
-                            Kami</a>
+                            Kami</a> --}}
                         <a href="{{ url('/#edukasi') }}" data-target="edukasi"
                             class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Edukasi
                             Sampah</a>
@@ -86,6 +86,8 @@
                             Kerja</a>
                         <a href="{{ url('/blog') }}"
                             class="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('blog*') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Artikel</a>
+                        <a href="{{ route('produk.index') }}"
+                            class="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('produk*') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Produk</a>
                     </div>
 
                     <!-- Right CTA -->
@@ -117,9 +119,9 @@
                 <div class="px-6 py-6 flex flex-col space-y-5">
                     <a href="{{ url('/') }}"
                         class="mobile-nav-link {{ request()->is('/') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Beranda</a>
-                    <a href="{{ url('/#tentang') }}"
+                    {{-- <a href="{{ url('/#tentang') }}"
                         class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Tentang
-                        Kami</a>
+                        Kami</a> --}}
                     <a href="{{ url('/#edukasi') }}"
                         class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Edukasi
                         Sampah</a>
@@ -128,6 +130,8 @@
                         Kerja</a>
                     <a href="{{ url('/blog') }}"
                         class="mobile-nav-link {{ request()->is('blog*') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Artikel</a>
+                    <a href="{{ route('produk.index') }}"
+                        class="mobile-nav-link {{ request()->is('produk*') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Produk</a>
                     <hr class="border-gray-200">
                     <a href="{{ url('/#edukasi') }}"
                         class="mobile-nav-link bg-brand-light text-brand-dark text-center font-bold px-6 py-3.5 rounded-full hover:bg-[#a8d360] transition-colors shadow-sm">
@@ -171,7 +175,7 @@
                     <h3 class="text-sm font-bold mb-5 uppercase tracking-wider text-brand-light">Navigasi</h3>
                     <ul class="space-y-3 text-sm text-[#8eaba0]">
                         <li><a href="/" class="hover:text-white transition">Beranda</a></li>
-                        <li><a href="#tentang" class="hover:text-white transition">Tentang Kami</a></li>
+                        {{-- <li><a href="#tentang" class="hover:text-white transition">Tentang Kami</a></li> --}}
                         <li><a href="#edukasi" class="hover:text-white transition">Edukasi Sampah</a></li>
                         <li><a href="/program" class="hover:text-white transition">Program Kerja</a></li>
                         <li><a href="/blog" class="hover:text-white transition">Artikel & Berita</a></li>

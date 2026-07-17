@@ -29,6 +29,10 @@ use App\Http\Controllers\PublicBlogController;
 Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [PublicBlogController::class, 'show'])->name('blog.show');
 
+use App\Http\Controllers\PublicProductController;
+Route::get('/produk', [PublicProductController::class, 'index'])->name('produk.index');
+Route::get('/produk/{product}', [PublicProductController::class, 'show'])->name('produk.show');
+
 
 // Authentication Routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
@@ -57,4 +61,5 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('/admin/blogs', BlogController::class)->except(['create', 'edit', 'show']);
     Route::get('/admin/blogs/{blog}/detail', [BlogController::class, 'show'])->name('admin.blogs.detail');
     Route::resource('/admin/users', UserController::class)->except(['create', 'edit', 'show']);
+    Route::resource('/admin/products', \App\Http\Controllers\ProductController::class)->except(['create', 'edit', 'show']);
 });
