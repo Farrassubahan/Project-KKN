@@ -70,6 +70,7 @@
                     <a href="{{ url('/#tentang') }}" data-target="tentang" class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Tentang Kami</a>
                     <a href="{{ url('/#edukasi') }}" data-target="edukasi" class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Edukasi Sampah</a>
                     <a href="{{ url('/program') }}" class="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('program') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Program Kerja</a>
+                    <a href="{{ url('/blog') }}" class="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('blog*') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Artikel</a>
                 </div>
 
                 <!-- Right CTA -->
@@ -95,6 +96,7 @@
                 <a href="{{ url('/#tentang') }}" class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Tentang Kami</a>
                 <a href="{{ url('/#edukasi') }}" class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Edukasi Sampah</a>
                 <a href="{{ url('/program') }}" class="mobile-nav-link {{ request()->is('program') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Program Kerja</a>
+                <a href="{{ url('/blog') }}" class="mobile-nav-link {{ request()->is('blog*') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Artikel</a>
                 <hr class="border-gray-200">
                 <a href="{{ url('/#edukasi') }}" class="mobile-nav-link bg-brand-light text-brand-dark text-center font-bold px-6 py-3.5 rounded-full hover:bg-[#a8d360] transition-colors shadow-sm">
                     Mulai Pilah
@@ -134,6 +136,7 @@
                         <li><a href="#tentang" class="hover:text-white transition">Tentang Kami</a></li>
                         <li><a href="#edukasi" class="hover:text-white transition">Edukasi Sampah</a></li>
                         <li><a href="/program" class="hover:text-white transition">Program Kerja</a></li>
+                        <li><a href="/blog" class="hover:text-white transition">Artikel & Berita</a></li>
                     </ul>
                 </div>
                 <div>
