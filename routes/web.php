@@ -24,14 +24,11 @@ Route::get('/program', function () {
     return view('public.program');
 });
 
-Route::get('/blog', function () {
-    return view('public.informasi.blog');
-});
+use App\Http\Controllers\PublicBlogController;
 
+Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{slug}', [PublicBlogController::class, 'show'])->name('blog.show');
 
-Route::get('/blog/detail', function () {
-    return view('public.informasi.blog-detail');
-});
 
 // Authentication Routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
@@ -48,6 +45,8 @@ Route::post('/forgot-password/reset', [ForgotPasswordController::class, 'resetPa
 // Admin Routes (Protected)
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UserController;
+
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/admin/dashboard', function () {
@@ -57,4 +56,5 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('/admin/categories', CategoryController::class)->except(['create', 'edit', 'show']);
     Route::resource('/admin/blogs', BlogController::class)->except(['create', 'edit', 'show']);
     Route::get('/admin/blogs/{blog}/detail', [BlogController::class, 'show'])->name('admin.blogs.detail');
+    Route::resource('/admin/users', UserController::class)->except(['create', 'edit', 'show']);
 });

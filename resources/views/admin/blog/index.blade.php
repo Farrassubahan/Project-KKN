@@ -285,28 +285,74 @@
         </div>
     </div>
 
+
     <!-- DETAIL MODAL -->
-    <div id="detail-modal" class="fixed inset-0 z-50 overflow-y-auto hidden">
-        <div class="flex items-center justify-center min-h-screen p-4 text-center">
-            <div class="fixed inset-0 bg-gray-900/50 transition-opacity" onclick="closeDetailModal()"></div>
+    <div id="detail-modal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm overflow-y-auto">
+
+        <div class="min-h-screen flex items-center justify-center p-6">
+
             <div
-                class="relative bg-white rounded-2xl max-w-2xl w-full p-8 shadow-2xl border border-white/10 transform transition-all text-left">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 id="detail-title" class="text-2xl font-bold text-gray-800"></h3>
-                    <button onclick="closeDetailModal()" class="text-gray-400 hover:text-gray-600">
-                        <i class="fas fa-times text-lg"></i>
-                    </button>
+                class="relative bg-white rounded-3xl shadow-2xl w-full max-w-5xl overflow-hidden animate-in fade-in zoom-in duration-200">
+
+                <!-- Close -->
+                <button onclick="closeDetailModal()"
+                    class="absolute top-6 right-6 z-10 w-11 h-11 rounded-full bg-white shadow hover:bg-gray-100 transition">
+                    <i class="fas fa-times text-gray-500"></i>
+                </button>
+
+                <!-- Header -->
+                <div class="px-12 pt-10 pb-8 text-center border-b">
+
+                    <span id="detail-category"
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full
+                    bg-green-100 text-green-700 text-sm font-semibold">
+                    </span>
+
+                    <h1 id="detail-title" class="mt-5 text-4xl font-bold text-gray-800 leading-tight max-w-3xl mx-auto">
+                    </h1>
+
                 </div>
-                <div id="detail-thumbnail" class="mb-4 text-center"></div>
-                <div id="detail-category" class="mb-2 text-sm text-gray-600"></div>
-                <div id="detail-content" class="prose max-w-none"></div>
+
+                <!-- Thumbnail -->
+                <div id="detail-thumbnail" class="flex justify-center items-center bg-gray-50 px-8 py-8 border-b">
+                </div>
+
+                <!-- Content -->
+                <div class="max-h-[55vh] overflow-y-auto">
+
+                    <article id="detail-content"
+                        class="prose prose-lg max-w-3xl mx-auto px-10 py-10
+                    prose-img:rounded-2xl
+                    prose-img:shadow-lg
+                    prose-headings:text-gray-800
+                    prose-p:text-gray-700
+                    prose-p:leading-8
+                    prose-a:text-green-700">
+                    </article>
+
+                </div>
+
+                <!-- Footer -->
+                <div class="border-t bg-gray-50 py-5 flex justify-center">
+
+                    <button onclick="closeDetailModal()"
+                        class="px-8 py-3 rounded-xl bg-brand-dark text-white font-semibold hover:opacity-90 transition">
+
+                        <i class="fas fa-times mr-2"></i>
+                        Tutup
+
+                    </button>
+
+                </div>
+
             </div>
+
         </div>
+
     </div>
 
 @endsection
 
-@section('scripts')
 @section('scripts')
     <script>
         function previewThumbnail(event, previewId) {
@@ -328,24 +374,64 @@
             document.getElementById('create-modal').classList.add('hidden');
         }
 
-        function openDetailModal(btn) {
-            document.getElementById('detail-title').textContent = btn.dataset.title;
-            document.getElementById('detail-category').textContent = 'Kategori: ' + btn.dataset.category;
+        // function openDetailModal(btn) {
+        //     document.getElementById('detail-title').textContent = btn.dataset.title;
+        //     document.getElementById('detail-category').textContent = 'Kategori: ' + btn.dataset.category;
 
-            const thumb = document.getElementById('detail-thumbnail');
+        //     const thumb = document.getElementById('detail-thumbnail');
 
-            if (btn.dataset.thumbnail) {
-                thumb.innerHTML = `<img src="${btn.dataset.thumbnail}" class="max-w-full h-48 object-cover rounded-md">`;
+        //     if (btn.dataset.thumbnail) {
+        //         thumb.innerHTML = `<img src="${btn.dataset.thumbnail}" class="max-w-full h-48 object-cover rounded-md">`;
+        //     } else {
+        //         thumb.innerHTML = '';
+        //     }
+
+        //     document.getElementById('detail-content').innerHTML = btn.dataset.content;
+        //     document.getElementById('detail-modal').classList.remove('hidden');
+        // }
+
+        function openDetailModal(button) {
+
+            const modal = document.getElementById('detail-modal');
+            const title = document.getElementById('detail-title');
+            const category = document.getElementById('detail-category');
+            const thumbnail = document.getElementById('detail-thumbnail');
+            const content = document.getElementById('detail-content');
+
+            title.textContent = button.dataset.title;
+
+            category.innerHTML = `<i class="fas fa-book-open"></i>${button.dataset.category}`;
+
+            if (button.dataset.thumbnail) {
+                thumbnail.innerHTML = `
+                    <img src="${button.dataset.thumbnail}" alt="${button.dataset.title}"
+                        class="w-auto max-w-md max-h-80 object-contain rounded-2xl shadow-lg border border-gray-200">`;
+
             } else {
-                thumb.innerHTML = '';
+
+                thumbnail.innerHTML = `
+            <div
+                class="w-full max-w-3xl h-80 rounded-2xl border-2 border-dashed border-gray-300
+                flex flex-col items-center justify-center text-gray-400">
+
+                <i class="fas fa-image text-6xl mb-4"></i>
+
+                <p>Tidak ada thumbnail</p>
+
+            </div>
+        `;
+
             }
 
-            document.getElementById('detail-content').innerHTML = btn.dataset.content;
-            document.getElementById('detail-modal').classList.remove('hidden');
+            content.innerHTML = button.dataset.content;
+            modal.classList.remove("hidden");
+            document.body.classList.add("overflow-hidden");
+
         }
 
         function closeDetailModal() {
-            document.getElementById('detail-modal').classList.add('hidden');
+            document.getElementById("detail-modal").classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
         }
 
         function openEditModal(id, judul, categoryId, isi) {
@@ -364,6 +450,4 @@
             document.getElementById('edit-modal').classList.add('hidden');
         }
     </script>
-@endsection
-
 @endsection

@@ -92,11 +92,12 @@
 
             <p class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-6">Pengaturan</p>
 
-            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-gray-300 hover:bg-white/10 hover:text-white">
+            <a href="{{ url('/admin/users') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all {{ request()->is('admin/users*') ? 'bg-brand-accent text-white shadow-md' : 'text-gray-300 hover:bg-white/10 hover:text-white' }}">
                 <i class="fas fa-users w-5 text-center"></i>
                 <span class="text-sm font-medium">Manajemen User</span>
             </a>
         </nav>
+
 
         <!-- Sidebar Footer -->
         <div class="p-4 border-t border-white/10">
