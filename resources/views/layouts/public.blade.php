@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +32,9 @@
         }
     </script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap"
+        rel="stylesheet">
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- FontAwesome -->
@@ -41,69 +44,102 @@
             background-color: #fbfaf5;
             color: #0f3c2e;
         }
+
         /* Soft green gradient background for the right side of the screen */
         .bg-gradient-soft {
             background: radial-gradient(circle at 100% 20%, rgba(188, 228, 116, 0.15) 0%, rgba(251, 250, 245, 0) 50%);
         }
     </style>
 </head>
+
 <body class="font-sans antialiased flex flex-col min-h-screen relative bg-gradient-soft overflow-x-hidden">
-    
-    @if(!View::hasSection('hide_navbar'))
-    <!-- Navigation Bar -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
-        <div class="max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-12">
-            <div class="flex justify-between items-center h-24">
-                
-                <!-- Logo -->
-                <a href="/" class="flex items-center gap-3 group">
-                    <img src="{{ asset('assets/logo-mulangsari.png') }}" alt="Logo KKN Mulangsari" class="h-12 w-auto object-contain drop-shadow-sm group-hover:scale-105 transition-transform">
-                    <div class="flex flex-col leading-tight hidden sm:flex">
-                        <span class="font-bold text-sm tracking-wider text-brand-dark">MULANGSARI</span>
-                        <span class="font-bold text-xs tracking-widest text-brand-accent">BERSIH</span>
+
+    @if (!View::hasSection('hide_navbar'))
+        <!-- Navigation Bar -->
+        <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+            <div class="max-w-[90rem] mx-auto px-6 sm:px-10 lg:px-12">
+                <div class="flex justify-between items-center h-24">
+
+                    <!-- Logo -->
+                    <a href="/" class="flex items-center gap-3 group">
+                        <img src="{{ asset('assets/logo-mulangsari.png') }}" alt="Logo KKN Mulangsari"
+                            class="h-12 w-auto object-contain drop-shadow-sm group-hover:scale-105 transition-transform">
+                        <div class="flex flex-col leading-tight hidden sm:flex">
+                            <span class="font-bold text-sm tracking-wider text-brand-dark">MULANGSARI</span>
+                            <span class="font-bold text-xs tracking-widest text-brand-accent">BERSIH</span>
+                        </div>
+                    </a>
+
+                    <!-- Desktop Menu (Centered) -->
+                    <div
+                        class="hidden lg:flex items-center space-x-2 bg-white/50 backdrop-blur-md px-2 py-1.5 rounded-full border border-white/40 shadow-sm">
+                        <a href="{{ url('/') }}" data-target="hero"
+                            class="nav-link text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('/') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Beranda</a>
+                        <a href="{{ url('/#tentang') }}" data-target="tentang"
+                            class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Tentang
+                            Kami</a>
+                        <a href="{{ url('/#edukasi') }}" data-target="edukasi"
+                            class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Edukasi
+                            Sampah</a>
+                        <a href="{{ url('/program') }}"
+                            class="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('program') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Program
+                            Kerja</a>
+                        <a href="{{ url('/blog') }}"
+                            class="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('blog*') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Artikel</a>
                     </div>
-                </a>
 
-                <!-- Desktop Menu (Centered) -->
-                <div class="hidden lg:flex items-center space-x-2 bg-white/50 backdrop-blur-md px-2 py-1.5 rounded-full border border-white/40 shadow-sm">
-                    <a href="{{ url('/') }}" data-target="hero" class="nav-link text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('/') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Beranda</a>
-                    <a href="{{ url('/#tentang') }}" data-target="tentang" class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Tentang Kami</a>
-                    <a href="{{ url('/#edukasi') }}" data-target="edukasi" class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Edukasi Sampah</a>
-                    <a href="{{ url('/program') }}" class="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('program') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Program Kerja</a>
-                    <a href="{{ url('/blog') }}" class="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('blog*') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Artikel</a>
+                    <!-- Right CTA -->
+                    <div class="hidden lg:flex items-center gap-4">
+                        <a href="#edukasi"
+                            class="text-brand-dark text-sm font-bold px-4 py-2 hover:text-brand-accent transition-colors">
+                            Mulai Pilah
+                        </a>
+
+                        <a href="{{ route('login') }}"
+                            class="text-brand-dark text-sm font-bold px-4 py-2 hover:text-brand-accent transition-colors">
+                            Login
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="lg:hidden flex items-center">
+                        <button id="mobile-menu-btn"
+                            class="text-brand-dark hover:text-brand-accent focus:outline-none p-2">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Right CTA -->
-                <div class="hidden lg:flex items-center">
-                    <a href="#edukasi" class="bg-brand-light text-brand-dark text-sm font-bold px-6 py-2.5 rounded-full hover:bg-[#a8d360] transition-colors shadow-sm">
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu"
+                class="lg:hidden hidden bg-[#fbfaf5]/95 backdrop-blur-xl absolute top-24 left-0 w-full shadow-lg border-t border-gray-200">
+                <div class="px-6 py-6 flex flex-col space-y-5">
+                    <a href="{{ url('/') }}"
+                        class="mobile-nav-link {{ request()->is('/') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Beranda</a>
+                    <a href="{{ url('/#tentang') }}"
+                        class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Tentang
+                        Kami</a>
+                    <a href="{{ url('/#edukasi') }}"
+                        class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Edukasi
+                        Sampah</a>
+                    <a href="{{ url('/program') }}"
+                        class="mobile-nav-link {{ request()->is('program') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Program
+                        Kerja</a>
+                    <a href="{{ url('/blog') }}"
+                        class="mobile-nav-link {{ request()->is('blog*') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Artikel</a>
+                    <hr class="border-gray-200">
+                    <a href="{{ url('/#edukasi') }}"
+                        class="mobile-nav-link bg-brand-light text-brand-dark text-center font-bold px-6 py-3.5 rounded-full hover:bg-[#a8d360] transition-colors shadow-sm">
                         Mulai Pilah
                     </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-brand-dark hover:text-brand-accent focus:outline-none p-2">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
+                    <a href="{{ route('login') }}"
+                        class="mobile-nav-link bg-brand-light text-brand-dark text-center font-bold px-6 py-3.5 rounded-full hover:bg-[#a8d360] transition-colors shadow-sm">
+                        Login
+                    </a>
                 </div>
             </div>
-        </div>
-
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="lg:hidden hidden bg-[#fbfaf5]/95 backdrop-blur-xl absolute top-24 left-0 w-full shadow-lg border-t border-gray-200">
-            <div class="px-6 py-6 flex flex-col space-y-5">
-                <a href="{{ url('/') }}" class="mobile-nav-link {{ request()->is('/') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Beranda</a>
-                <a href="{{ url('/#tentang') }}" class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Tentang Kami</a>
-                <a href="{{ url('/#edukasi') }}" class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Edukasi Sampah</a>
-                <a href="{{ url('/program') }}" class="mobile-nav-link {{ request()->is('program') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Program Kerja</a>
-                <a href="{{ url('/blog') }}" class="mobile-nav-link {{ request()->is('blog*') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Artikel</a>
-                <hr class="border-gray-200">
-                <a href="{{ url('/#edukasi') }}" class="mobile-nav-link bg-brand-light text-brand-dark text-center font-bold px-6 py-3.5 rounded-full hover:bg-[#a8d360] transition-colors shadow-sm">
-                    Mulai Pilah
-                </a>
-            </div>
-        </div>
-    </nav>
+        </nav>
     @endif
 
     <!-- Main Content Area -->
@@ -118,7 +154,8 @@
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="bg-white/10 p-2 rounded-xl backdrop-blur-sm">
-                            <img src="{{ asset('assets/logo-mulangsari.png') }}" alt="Logo KKN Mulangsari" class="h-12 w-auto object-contain drop-shadow-md">
+                            <img src="{{ asset('assets/logo-mulangsari.png') }}" alt="Logo KKN Mulangsari"
+                                class="h-12 w-auto object-contain drop-shadow-md">
                         </div>
                         <div class="flex flex-col leading-tight">
                             <span class="font-bold text-sm tracking-wider text-white">MULANGSARI</span>
@@ -126,7 +163,8 @@
                         </div>
                     </div>
                     <p class="text-[#8eaba0] text-sm leading-relaxed max-w-sm">
-                        Inisiatif mahasiswa KKN bersama warga Desa Mulangsari, Kecamatan Pangkalan untuk mewujudkan lingkungan yang bersih, sehat, dan bebas sampah.
+                        Inisiatif mahasiswa KKN bersama warga Desa Mulangsari, Kecamatan Pangkalan untuk mewujudkan
+                        lingkungan yang bersih, sehat, dan bebas sampah.
                     </p>
                 </div>
                 <div>
@@ -153,10 +191,12 @@
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-[#1a4a3a] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-[#6a8a7c]">
+            <div
+                class="border-t border-[#1a4a3a] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-[#6a8a7c]">
                 <p>&copy; {{ date('Y') }} KKN Desa Mulangsari. Hak Cipta Dilindungi.</p>
                 <div class="flex space-x-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white transition"><i class="fab fa-instagram text-lg"></i></a>
+                    <a href="#" class="hover:text-white transition"><i
+                            class="fab fa-instagram text-lg"></i></a>
                     <a href="#" class="hover:text-white transition"><i class="fab fa-youtube text-lg"></i></a>
                 </div>
             </div>
@@ -187,12 +227,12 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-        if(mobileBtn && mobileMenu) {
+        if (mobileBtn && mobileMenu) {
             mobileBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
                 // Change icon
                 const icon = mobileBtn.querySelector('i');
-                if(mobileMenu.classList.contains('hidden')) {
+                if (mobileMenu.classList.contains('hidden')) {
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 } else {
@@ -200,7 +240,7 @@
                     icon.classList.add('fa-times');
                 }
             });
-            
+
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
@@ -224,12 +264,13 @@
                 let offset = 250;
 
                 sections.forEach(section => {
-                    if (section.offsetTop - offset <= scrollPos && (section.offsetTop + section.offsetHeight - offset) > scrollPos) {
+                    if (section.offsetTop - offset <= scrollPos && (section.offsetTop + section
+                            .offsetHeight - offset) > scrollPos) {
                         navLinks.forEach(a => {
                             // Reset classes
                             a.classList.remove('text-white', 'bg-brand-dark');
                             a.classList.add('text-brand-dark');
-                            
+
                             // Set active class
                             if (a.getAttribute('data-target') === section.id) {
                                 a.classList.add('text-white', 'bg-brand-dark');
@@ -241,8 +282,9 @@
             }
 
             window.addEventListener('scroll', onScroll);
-            onScroll(); 
+            onScroll();
         });
     </script>
 </body>
+
 </html>
