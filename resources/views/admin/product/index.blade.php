@@ -88,7 +88,13 @@
                             <td class="px-6 py-4 text-right">
                                 <div class="flex items-center justify-end gap-2">
                                     <button
-                                        onclick="openEditModal({{ $product->id }}, '{{ addslashes($product->name) }}', {{ $product->harga }}, '{{ $product->link_ecommerce }}', '{{ addslashes($product->deskripsi) }}', '{{ asset('products/' . $product->foto) }}')"
+                                        onclick="openEditModal(this)"
+                                        data-id="{{ $product->id }}"
+                                        data-name="{{ $product->name }}"
+                                        data-harga="{{ $product->harga }}"
+                                        data-link="{{ $product->link_ecommerce }}"
+                                        data-deskripsi="{{ $product->deskripsi }}"
+                                        data-foto="{{ $product->foto ? asset('products/' . $product->foto) : '' }}"
                                         class="w-9 h-9 rounded-lg border border-gray-200 text-gray-500 hover:border-brand-accent hover:text-brand-accent hover:bg-green-50/30 transition-all flex items-center justify-center"
                                         title="Edit">
                                         <i class="fas fa-edit text-xs"></i>
@@ -153,7 +159,14 @@
     }
 
     // Modal Edit Functions
-    function openEditModal(id, name, harga, linkEcommerce, deskripsi, fotoUrl) {
+    function openEditModal(button) {
+        const id = button.getAttribute('data-id');
+        const name = button.getAttribute('data-name');
+        const harga = button.getAttribute('data-harga');
+        const linkEcommerce = button.getAttribute('data-link');
+        const deskripsi = button.getAttribute('data-deskripsi');
+        const fotoUrl = button.getAttribute('data-foto');
+
         const form = document.getElementById('edit-form');
         form.action = `/admin/products/${id}`;
         

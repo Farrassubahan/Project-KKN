@@ -54,7 +54,13 @@ use App\Http\Controllers\UserController;
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/admin/dashboard', function () {
-        return view('admin.dashboard');
+        $totalBlogs = \App\Models\Blog::count();
+        $totalCategories = \App\Models\Category::count();
+        $totalProducts = \App\Models\Product::count();
+        $totalUsers = \App\Models\User::count();
+        $recentBlogs = \App\Models\Blog::with('category')->latest()->take(5)->get();
+
+        return view('admin.dashboard', compact('totalBlogs', 'totalCategories', 'totalProducts', 'totalUsers', 'recentBlogs'));
     });
 
     Route::resource('/admin/categories', CategoryController::class)->except(['create', 'edit', 'show']);

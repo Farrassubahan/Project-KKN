@@ -374,22 +374,6 @@
             document.getElementById('create-modal').classList.add('hidden');
         }
 
-        // function openDetailModal(btn) {
-        //     document.getElementById('detail-title').textContent = btn.dataset.title;
-        //     document.getElementById('detail-category').textContent = 'Kategori: ' + btn.dataset.category;
-
-        //     const thumb = document.getElementById('detail-thumbnail');
-
-        //     if (btn.dataset.thumbnail) {
-        //         thumb.innerHTML = `<img src="${btn.dataset.thumbnail}" class="max-w-full h-48 object-cover rounded-md">`;
-        //     } else {
-        //         thumb.innerHTML = '';
-        //     }
-
-        //     document.getElementById('detail-content').innerHTML = btn.dataset.content;
-        //     document.getElementById('detail-modal').classList.remove('hidden');
-        // }
-
         function openDetailModal(button) {
 
             const modal = document.getElementById('detail-modal');
