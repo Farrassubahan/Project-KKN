@@ -24,6 +24,10 @@ Route::get('/program', function () {
     return view('public.program');
 });
 
+use App\Http\Controllers\PublicActivityController;
+Route::get('/kegiatan', [PublicActivityController::class, 'index'])->name('kegiatan.index');
+Route::get('/kegiatan/{kegiatan}', [PublicActivityController::class, 'show'])->name('kegiatan.show');
+
 use App\Http\Controllers\PublicBlogController;
 
 Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
@@ -50,6 +54,7 @@ Route::post('/forgot-password/reset', [ForgotPasswordController::class, 'resetPa
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ActivityController;
 
 
 Route::middleware(['admin'])->group(function () {
@@ -68,4 +73,5 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/blogs/{blog}/detail', [BlogController::class, 'show'])->name('admin.blogs.detail');
     Route::resource('/admin/users', UserController::class)->except(['create', 'edit', 'show']);
     Route::resource('/admin/products', \App\Http\Controllers\ProductController::class)->except(['create', 'edit', 'show']);
+    Route::resource('/admin/activities', ActivityController::class)->except(['create', 'edit', 'show']);
 });

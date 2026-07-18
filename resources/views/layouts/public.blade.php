@@ -81,9 +81,15 @@
                         <a href="{{ url('/#edukasi') }}" data-target="edukasi"
                             class="nav-link text-sm font-medium px-5 py-2 rounded-full text-brand-dark hover:bg-white/80 transition-all duration-300">Edukasi
                             Sampah</a>
-                        <a href="{{ url('/program') }}"
-                            class="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('program') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Program
-                            Kerja</a>
+                        <div class="relative group">
+                            <button class="flex items-center gap-1.5 text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('program') || request()->is('kegiatan') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">
+                                Program Kerja <i class="fas fa-chevron-down text-[10px] opacity-75"></i>
+                            </button>
+                            <div class="absolute left-1/2 -translate-x-1/2 mt-2 w-40 bg-white rounded-2xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden py-1 text-center">
+                                <a href="{{ url('/program') }}" class="block px-4 py-2.5 text-xs text-brand-dark hover:bg-brand-light/30 hover:text-brand-accent transition-colors font-bold">Proker KKN</a>
+                                <a href="{{ url('/kegiatan') }}" class="block px-4 py-2.5 text-xs text-brand-dark hover:bg-brand-light/30 hover:text-brand-accent transition-colors font-bold">Kegiatan</a>
+                            </div>
+                        </div>
                         <a href="{{ url('/blog') }}"
                             class="text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('blog*') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">Artikel</a>
                         <a href="{{ route('produk.index') }}"
@@ -125,9 +131,15 @@
                     <a href="{{ url('/#edukasi') }}"
                         class="mobile-nav-link text-brand-dark font-medium hover:text-brand-accent transition-colors">Edukasi
                         Sampah</a>
-                    <a href="{{ url('/program') }}"
-                        class="mobile-nav-link {{ request()->is('program') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Program
-                        Kerja</a>
+                    <div class="flex flex-col space-y-2">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider px-2">Program Kerja & Kegiatan</span>
+                        <div class="flex flex-col pl-4 border-l-2 border-brand-light/50 space-y-2">
+                            <a href="{{ url('/program') }}"
+                                class="mobile-nav-link text-sm py-1 {{ request()->is('program') ? 'text-brand-accent font-bold' : 'text-brand-dark hover:text-brand-accent' }} transition-colors">Proker KKN</a>
+                            <a href="{{ url('/kegiatan') }}"
+                                class="mobile-nav-link text-sm py-1 {{ request()->is('kegiatan') ? 'text-brand-accent font-bold' : 'text-brand-dark hover:text-brand-accent' }} transition-colors">Kegiatan</a>
+                        </div>
+                    </div>
                     <a href="{{ url('/blog') }}"
                         class="mobile-nav-link {{ request()->is('blog*') ? 'text-brand-accent font-bold' : 'text-brand-dark font-medium hover:text-brand-accent' }} transition-colors">Artikel</a>
                     <a href="{{ route('produk.index') }}"

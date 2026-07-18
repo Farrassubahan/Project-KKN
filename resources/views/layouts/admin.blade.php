@@ -95,6 +95,11 @@
                 <span class="text-sm font-medium">Produk Daur Ulang</span>
             </a>
 
+            <a href="{{ url('/admin/activities') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all {{ request()->is('admin/activities*') ? 'bg-brand-accent text-white shadow-md' : 'text-gray-300 hover:bg-white/10 hover:text-white' }}">
+                <i class="fas fa-camera w-5 text-center"></i>
+                <span class="text-sm font-medium">Dokumentasi Kegiatan</span>
+            </a>
+
             <p class="px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 mt-6">Pengaturan</p>
 
             <a href="{{ url('/admin/users') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all {{ request()->is('admin/users*') ? 'bg-brand-accent text-white shadow-md' : 'text-gray-300 hover:bg-white/10 hover:text-white' }}">
