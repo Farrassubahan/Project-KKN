@@ -85,7 +85,7 @@
                             <button class="flex items-center gap-1.5 text-sm font-medium px-5 py-2 rounded-full transition-all duration-300 {{ request()->is('program') || request()->is('kegiatan') ? 'text-white bg-brand-dark' : 'text-brand-dark hover:bg-white/80' }}">
                                 Program Kerja <i class="fas fa-chevron-down text-[10px] opacity-75"></i>
                             </button>
-                            <div class="absolute left-1/2 -translate-x-1/2 mt-2 w-40 bg-white rounded-2xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden py-1 text-center">
+                            <div class="absolute left-1/2 -translate-x-1/2 mt-2 w-40 bg-white rounded-2xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden py-1">
                                 <a href="{{ url('/program') }}" class="block px-4 py-2.5 text-xs text-brand-dark hover:bg-brand-light/30 hover:text-brand-accent transition-colors font-bold">Proker KKN</a>
                                 <a href="{{ url('/kegiatan') }}" class="block px-4 py-2.5 text-xs text-brand-dark hover:bg-brand-light/30 hover:text-brand-accent transition-colors font-bold">Kegiatan</a>
                             </div>

@@ -44,11 +44,11 @@
                 <!-- Stats -->
                 <div class="flex flex-wrap items-center gap-8 md:gap-12 mt-8">
                     <div>
-                        <h4 class="text-2xl font-bold text-brand-dark mb-1">10,5 km&sup2;</h4>
+                        <h4 class="text-2xl font-bold text-brand-dark mb-1">9 km&sup2;</h4>
                         <p class="text-xs text-brand-gray uppercase tracking-wider">luas wilayah</p>
                     </div>
                     <div>
-                        <h4 class="text-2xl font-bold text-brand-dark mb-1">4.215 jiwa</h4>
+                        <h4 class="text-2xl font-bold text-brand-dark mb-1">4.800 jiwa</h4>
                         <p class="text-xs text-brand-gray uppercase tracking-wider">penduduk</p>
                     </div>
                     <div>
