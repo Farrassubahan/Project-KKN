@@ -52,7 +52,7 @@
                         <p class="text-xs text-brand-gray uppercase tracking-wider">penduduk</p>
                     </div>
                     <div>
-                        <h4 class="text-2xl font-bold text-brand-dark mb-1">04</h4>
+                        <h4 class="text-2xl font-bold text-brand-dark mb-1">-</h4>
                         <p class="text-xs text-brand-gray uppercase tracking-wider">program KKN</p>
                     </div>
                 </div>
@@ -65,7 +65,8 @@
                 
                 <!-- Main Image -->
                 <div class="relative rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] lg:aspect-square">
-                    <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1000&q=80" alt="Pemandangan Desa" class="w-full h-full object-cover">
+                    <img src="{{ asset('assets/foto ladingpage.jpeg') }}" alt="Pemandangan Desa" class="w-full h-full object-cover">
+                    {{-- <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1000&q=80" alt="Pemandangan Desa" class="w-full h-full object-cover"> --}}
                     
                     <!-- Floating Quote Card -->
                     <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 bg-white p-6 rounded-2xl shadow-xl max-w-[280px]">
@@ -123,7 +124,7 @@
             <p class="text-brand-gray text-lg">Langkah kecil di rumah berdampak besar bagi bumi. Klik kartu di bawah untuk mempelajari setiap jenis sampah.</p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Organik -->
             <a href="/edukasi/organik" class="group block" data-aos="fade-up" data-aos-delay="100">
                 <div class="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
@@ -153,7 +154,7 @@
             </a>
             
             <!-- B3 -->
-            <a href="/edukasi/b3" class="group block" data-aos="fade-up" data-aos-delay="300">
+            {{-- <a href="/edukasi/b3" class="group block" data-aos="fade-up" data-aos-delay="300">
                 <div class="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                     <div class="w-16 h-16 bg-[#fdeaea] text-[#d94a4a] rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fas fa-biohazard"></i>
@@ -164,7 +165,7 @@
                         Pelajari lebih lanjut <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
                     </div>
                 </div>
-            </a>
+            </a> --}}
         </div>
     </div>
 </section>

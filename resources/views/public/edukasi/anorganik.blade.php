@@ -17,7 +17,7 @@
         </p>
     </div>
 </section>
-
+ 
 <!-- Konten Edukasi Dasar -->
 <section class="pb-16 relative">
     <div class="max-w-[75rem] mx-auto px-6 sm:px-10 lg:px-12">
@@ -68,60 +68,60 @@
         </div>
 
         <div class="space-y-24">
-            <!-- Kerajinan Plastik (Text Left, Image Right) -->
+            <!-- Gantungan Kunci (Text Left, Image Right) -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <div data-aos="fade-right">
-                    <span class="text-xs font-bold uppercase tracking-wider text-brand-accent bg-[#eef5e9] px-3 py-1 rounded-full">Kreativitas Plastik</span>
-                    <h3 class="font-serif text-3xl font-bold text-brand-dark mt-4 mb-4">Tas Modis & Pot Bunga Estetis</h3>
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-accent bg-[#eef5e9] px-3 py-1 rounded-full">Kreasi Plastik</span>
+                    <h3 class="font-serif text-3xl font-bold text-brand-dark mt-4 mb-4">Gantungan Kunci Unik</h3>
                     <div class="w-16 h-1 bg-brand-light rounded-full mb-6"></div>
                     <p class="text-brand-gray text-lg leading-relaxed mb-6">
-                        Limbah kantong plastik tebal dan botol minum bekas dapat dilebur atau dianyam kembali untuk dijadikan tas belanja premium (*ecobag*), dompet, hingga pot bunga gantung berkarakter unik.
+                        Limbah plastik berukuran kecil seperti tutup botol, sedotan, atau bungkus kopi dapat dilebur dan dicetak ulang menjadi gantungan kunci berkarakter unik yang menarik dan fungsional.
                     </p>
                     <p class="text-brand-gray text-lg leading-relaxed mb-6">
-                        <strong>Potensi Pendapatan:</strong> Produk olahan ini sangat diminati oleh kalangan pencinta lingkungan (*green buyers*) dan dapat dipasarkan seharga Rp15.000 hingga Rp150.000 per item tergantung kerumitan anyaman.
+                        <strong>Potensi Pendapatan:</strong> Modal yang dibutuhkan sangat kecil, namun bisa dipasarkan sebagai souvenir pernikahan atau cinderamata lokal dengan harga Rp3.000 hingga Rp15.000 per buah.
                     </p>
                 </div>
                 <div class="relative" data-aos="fade-left">
                     <div class="absolute inset-0 bg-[#eef5e9] rounded-[2.5rem] transform translate-x-4 translate-y-4 -z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80" alt="Kerajinan Plastik Daur Ulang" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
+                    <img src="{{ asset('assets/ganci.jpeg') }}" alt="Gantungan Kunci Daur Ulang" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
                 </div>
             </div>
 
-            <!-- Kerajinan Kertas/Kardus (Image Left, Text Right) -->
+            <!-- Paving Block (Image Left, Text Right) -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <div class="relative order-2 lg:order-1" data-aos="fade-right">
                     <div class="absolute inset-0 bg-[#fdf5e6] rounded-[2.5rem] transform -translate-x-4 translate-y-4 -z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=800&q=80" alt="Kerajinan Kardus Organizer" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
+                    <img src="{{ asset('assets/pavingblok.jpeg') }}" alt="Paving Block Plastik" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
                 </div>
                 <div class="order-1 lg:order-2" data-aos="fade-left">
-                    <span class="text-xs font-bold uppercase tracking-wider text-[#e5a024] bg-[#fdf5e6] px-3 py-1 rounded-full">Kreasi Kardus & Kertas</span>
-                    <h3 class="font-serif text-3xl font-bold text-brand-dark mt-4 mb-4">Organizer Box & Frame Foto Unik</h3>
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#e5a024] bg-[#fdf5e6] px-3 py-1 rounded-full">Inovasi Material</span>
+                    <h3 class="font-serif text-3xl font-bold text-brand-dark mt-4 mb-4">Paving Block Ramah Lingkungan</h3>
                     <div class="w-16 h-1 bg-[#e5a024] rounded-full mb-6"></div>
                     <p class="text-brand-gray text-lg leading-relaxed mb-6">
-                        Kardus bekas tebal kerap kali dibuang begitu saja. Padahal, dengan sedikit potongan kreatif dan balutan kain perca atau kertas kado, kardus bisa disulap menjadi kotak kosmetik (*desk organizer*), wadah penyimpanan serbaguna, hingga pigura foto bernilai tinggi.
+                        Sampah plastik kresek atau kemasan sachet yang jumlahnya melimpah dapat dilebur bersama oli bekas atau pasir untuk dicetak menjadi paving block yang kuat, padat, dan tahan lama.
                     </p>
                     <p class="text-brand-gray text-lg leading-relaxed mb-6">
-                        <strong>Potensi Pendapatan:</strong> Wadah penyimpanan minimalis dan fungsional dari bahan daur ulang ini memiliki pasar yang besar di e-commerce dengan harga jual rata-rata Rp25.000 hingga Rp80.000.
+                        <strong>Potensi Pendapatan:</strong> Solusi cerdas untuk mengurangi volume sampah plastik desa secara drastis, sekaligus bernilai jual kompetitif untuk proyek infrastruktur lingkungan atau dijual per meter persegi.
                     </p>
                 </div>
             </div>
 
-            <!-- Kerajinan Kaca & Kaleng (Text Left, Image Right) -->
+            <!-- Vas Bunga dari Botol Bekas (Text Left, Image Right) -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <div data-aos="fade-right">
-                    <span class="text-xs font-bold uppercase tracking-wider text-[#0284c7] bg-[#f0f9ff] px-3 py-1 rounded-full">Seni Kaca & Logam</span>
-                    <h3 class="font-serif text-3xl font-bold text-brand-dark mt-4 mb-4">Lampu Hias & Vas Bunga Mewah</h3>
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#0284c7] bg-[#f0f9ff] px-3 py-1 rounded-full">Daur Ulang Botol</span>
+                    <h3 class="font-serif text-3xl font-bold text-brand-dark mt-4 mb-4">Vas Bunga Estetis</h3>
                     <div class="w-16 h-1 bg-[#0284c7] rounded-full mb-6"></div>
                     <p class="text-brand-gray text-lg leading-relaxed mb-6">
-                        Botol kaca sisa selai atau sirup dan kaleng logam bekas minuman ringan dapat didekorasi ulang menggunakan cat khusus atau lilitan tali rami. Barang-barang ini bertransformasi menjadi tempat lilin aromaterapi, lampu hias meja, hingga vas bunga bergaya *rustic*.
+                        Botol plastik atau kaca bekas minuman dapat dipotong, diwarnai dengan cat semprot, atau dililit dengan tali rami (macrame). Barang bekas ini akan bertransformasi menjadi vas bunga cantik bergaya *rustic* atau minimalis.
                     </p>
                     <p class="text-brand-gray text-lg leading-relaxed mb-6">
-                        <strong>Potensi Pendapatan:</strong> Sangat pas untuk dekorasi kafe maupun interior rumah bertema industrial atau minimalis. Vas dan lampu hias ini bernilai jual tinggi, mulai dari Rp50.000 hingga ratusan ribu rupiah.
+                        <strong>Potensi Pendapatan:</strong> Sangat diminati sebagai dekorasi meja tamu atau sudut ruangan. Vas bunga hasil kreasi ini bisa bernilai jual tinggi mulai dari Rp20.000 hingga puluhan ribu rupiah.
                     </p>
                 </div>
                 <div class="relative" data-aos="fade-left">
                     <div class="absolute inset-0 bg-[#e0f2fe] rounded-[2.5rem] transform translate-x-4 translate-y-4 -z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80" alt="Lampu Hias Daur Ulang" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
+                    <img src="{{ asset('assets/vas bunga.jpg') }}" alt="Vas Bunga Botol Bekas" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
                 </div>
             </div>
         </div>

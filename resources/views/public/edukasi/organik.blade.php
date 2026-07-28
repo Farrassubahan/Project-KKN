@@ -83,7 +83,7 @@
                 </div>
                 <div class="relative" data-aos="fade-left">
                     <div class="absolute inset-0 bg-[#fdf5e6] rounded-[2.5rem] transform translate-x-4 translate-y-4 -z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Eco Enzyme" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
+                    <img src="{{ asset('assets/ecoenzym.jpg') }}" alt="Eco Enzyme" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
                 </div>
             </div>
 
@@ -91,7 +91,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <div class="relative order-2 lg:order-1" data-aos="fade-right">
                     <div class="absolute inset-0 bg-[#eef5e9] rounded-[2.5rem] transform -translate-x-4 translate-y-4 -z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1592424005756-3c0fde9d7a26?auto=format&fit=crop&w=800&q=80" alt="Pupuk Kompos" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
+                    <img src="{{ asset('assets/kompos.jpg') }}" alt="Pupuk Kompos" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
                 </div>
                 <div class="order-1 lg:order-2" data-aos="fade-left">
                     <span class="text-xs font-bold uppercase tracking-wider text-brand-accent bg-[#eef5e9] px-3 py-1 rounded-full">Nutrisi Alam</span>
@@ -121,7 +121,7 @@
                 </div>
                 <div class="relative" data-aos="fade-left">
                     <div class="absolute inset-0 bg-[#e0f2fe] rounded-[2.5rem] transform translate-x-4 translate-y-4 -z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80" alt="Budidaya Maggot BSF" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
+                    <img src="{{ asset('assets/magot.jpg') }}" alt="Budidaya Maggot BSF" class="rounded-[2.5rem] shadow-xl w-full object-cover aspect-[4/3] border-4 border-white">
                 </div>
             </div>
         </div>
